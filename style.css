@@ -1,1 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Amiri', serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.9),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255,190,215,.7),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #f8d9e6,
+            #f5e8ef
+        );
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+/* =========================
+   حباب‌ها
+========================= */
+
+.bubbles {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+
+    display: block;
+
+    bottom: -30px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.35)
+        );
+
+    border: 1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.8),
+        0 0 20px rgba(255,170,205,.4);
+
+    opacity: 0;
+
+    animation: bubbleFloat linear infinite;
+}
+
+/* اندازه و موقعیت حباب‌ها */
+
+.bubble:nth-child(1) {
+    left: 3%;
+    width: 6px;
+    height: 6px;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    left: 18%;
+    width: 5px;
+    height: 5px;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(4) {
+    left: 26%;
+    width: 13px;
+    height: 13px;
+    animation-duration: 13s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(5) {
+    left: 35%;
+    width: 7px;
+    height: 7px;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+    left: 43%;
+    width: 5px;
+    height: 5px;
+    animation-duration: 12s;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(7) {
+    left: 51%;
+    width: 11px;
+    height: 11px;
+    animation-duration: 14s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(8) {
+    left: 60%;
+    width: 6px;
+    height: 6px;
+    animation-duration: 8s;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(9) {
+    left: 68%;
+    width: 9px;
+    height: 9px;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(10) {
+    left: 76%;
+    width: 5px;
+    height: 5px;
+    animation-duration: 7s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(11) {
+    left: 84%;
+    width: 12px;
+    height: 12px;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(12) {
+    left: 92%;
+    width: 6px;
+    height: 6px;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
+
+/* =========================
+   صفحه اصلی
+========================= */
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   کارت رمز
+========================= */
+
+.password-box {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 48px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.55);
+
+    border:
+        1px solid rgba(255,255,255,.8);
+
+    border-radius: 32px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(120,55,85,.18),
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+    animation: appear 1s ease;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+
+/* =========================
+   عنوان
+========================= */
+
+.password-box h1 {
+    font-size: 46px;
+
+    font-weight: 700;
+
+    color: #7b3154;
+
+    margin-bottom: 15px;
+}
+
+.password-box p {
+    font-size: 20px;
+
+    line-height: 1.9;
+
+  /* =========================
+   موبایل
+========================= */
+
+@media (max-width: 480px) {
+
+    .password-box {
+        padding:
+            40px 22px;
+
+        border-radius:
+            28px;
+    }
+
+    .password-box h1 {
+        font-size:
+            38px;
+    }
+
+    .password-box p {
+        font-size:
+            18px;
+    }
+
+    .gift-content {
+        padding:
+            45px 22px;
+    }
+
+    .gift-content h2 {
+        font-size:
+            38px;
+    }
+
+    .gift-content p {
+        font-size:
+            18px;
+    }
+}
+
+  color: #765264;
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================
+   ورودی رمز
+========================= */
+
+#passwordInput {
+    width: 100%;
+
+    height: 60px;
+
+    margin-top: 25px;
+
+    border:
+        1px solid rgba(123,49,84,.2);
+
+    border-radius: 20px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,.75);
+
+    text-align: center;
+
+    font-family: 'Cairo', sans-serif;
+
+    font-size: 21px;
+
+    letter-spacing: 6px;
+
+    color: #702d4e;
+
+    transition: .3s;
+}
+
+#passwordInput::placeholder {
+    letter-spacing: 0;
+
+    color: #b08a9a;
+}
+
+#passwordInput:focus {
+    background: white;
+
+    border-color: #9d4f70;
+
+    box-shadow:
+        0 0 0 4px rgba(157,79,112,.1),
+        0 10px 30px rgba(120,55,85,.1);
+}
+
+
+/* =========================
+   دکمه
+========================= */
+
+#enterButton {
+    width: 100%;
+
+    height: 60px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d4f70,
+            #7b3154
+        );
+
+    color: white;
+
+    font-family: 'Amiri', serif;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(123,49,84,.25);
+
+    transition: .3s;
+}
+
+#enterButton:hover {
+    transform:
+        translateY(-3px);
+}
+
+#enterButton:active {
+    transform:
+        scale(.97);
+}
+
+
+/* =========================
+   پیام خطا
+========================= */
+
+#errorMessage {
+    min-height: 28px;
+
+    margin-top: 15px;
+
+    color: #a33d55;
+
+    font-family: 'Cairo', sans-serif;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   مخفی شدن صفحه رمز
+========================= */
+
+.password-box.hide {
+    opacity: 0;
+
+    transform:
+        scale(.85)
+        translateY(-30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   صفحه هدیه
+========================= */
+
+.gift-box {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    transform:
+        scale(1.15);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.gift-box.show {
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   کارت هدیه
+========================= */
+
+.gift-content {
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.58);
+
+    border-radius: 35px;
+
+    border:
+        1px solid rgba(255,255,255,.8);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 80px rgba(120,55,85,.2);
+}
+
+
+/* =========================
+   قلب
+========================= */
+
+.heart {
+    font-size: 65px;
+
+    color: #a33d62;
+
+    margin-bottom: 15px;
+
+    animation:
+        heartbeat 1.4s infinite;
+}
+
+
+/* =========================
+   انیمیشن حباب
+========================= */
+
+@keyframes bubbleFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(.6);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .8;
+    }
+
+    50% {
+        transform:
+            translateY(-55vh)
+            translateX(18px)
+            scale(1);
+            
+        opacity: .75;
+    }
+
+    80% {
+        opacity: .45;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-15px)
+            scale(.5);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   انیمیشن ورود
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   ضربان قلب
+========================= */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+/* =========================
+   موبایل
+========================= */
+
+@media (max-width: 480px) {
+
+    .password-box {
+        padding:
+            40px 22px;
+
+        border-radius:
+            28px;
+    }
+
+    .password-box h1 {
+        font-size:
+            38px;
+    }
+
+    .password-box p {
+        font-size:
+            18px;
+    }
+
+    .gift-content {
+        padding:
+            45px 22px;
+    }
+
+    .gift-content h2 {
+        font-size:
+            38px;
+    }
+
+    .gift-content p {
+        font-size:
+            18px;
+    }
+}
