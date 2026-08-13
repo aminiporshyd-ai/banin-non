@@ -407,13 +407,13 @@ body {
 .letter {
     position: absolute;
 
-    z-index: 3;
+    z-index: 5;
 
     left: 8%;
-    bottom: 2%;
+    bottom: 8%;
 
     width: 84%;
-    height: 92%;
+    height: 90%;
 
     background:
         linear-gradient(
@@ -422,17 +422,19 @@ body {
             #fff6f9
         );
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     box-shadow:
-        0 8px 20px rgba(100,40,70,.12);
-
-    transform: translateY(0);
-
-    transition:
-        transform 1s cubic-bezier(.2,.8,.2,1);
+        0 12px 30px rgba(100,40,70,.18);
 
     overflow: hidden;
+
+    transform:
+        translateY(25%);
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1),
+        box-shadow .8s ease;
 }
 
 .letter-content {
@@ -468,7 +470,9 @@ body {
 }
 
 .envelope.open .letter {
-    transform: translateY(-28%);
+    transform: translateY(-65%);
+    box-shadow:
+        0 20px 45px rgba(100,40,70,.22);
 }
 
 .envelope.open .letter-content {
@@ -935,18 +939,18 @@ audio {
         width: 92vw;
     }
 
-    .letter-content {
-        padding: 17px 15px;
+   .letter-content {
+    padding: 20px 16px;
     }
 
-    .letter-content h3 {
-        font-size: 22px;
+.letter-content h3 {
+    font-size: 22px;
     }
 
-    .letter-content p {
-        font-size: 13px;
-        line-height: 1.6;
-    }
+.letter-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    } 
 
     .photo-message {
         padding: 20px 18px;
