@@ -302,19 +302,8 @@ body {
 
 
 /* =========================
-   پاکت
+   پاکت نامه
 ========================= */
-
-.envelope-section {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 40px 0 100px;
-}
 
 .envelope {
     position: relative;
@@ -333,16 +322,22 @@ body {
         );
 
     transition: transform .4s ease;
+
+    overflow: visible;
 }
 
 .envelope:hover {
     transform: translateY(-8px) scale(1.02);
 }
 
-.envelope-back,
-.envelope-front {
+
+/* پشت پاکت */
+
+.envelope-back {
     position: absolute;
     inset: 0;
+
+    z-index: 1;
 
     border-radius: 8px;
 
@@ -356,12 +351,57 @@ body {
     border: 1px solid rgba(150,70,100,.15);
 }
 
-.envelope-back {
-    z-index: 1;
+
+/* نامه */
+
+.letter {
+    position: absolute;
+
+    left: 8%;
+    bottom: 5%;
+
+    width: 84%;
+    height: 92%;
+
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #fff6f9
+        );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 25px rgba(100,40,70,.15);
+
+    overflow: hidden;
+
+    transform: translateY(15%);
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1);
 }
 
+
+/* جلوی پاکت */
+
 .envelope-front {
-    z-index: 4;
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6b8cf,
+            #e89bb8
+        );
 
     clip-path:
         polygon(
@@ -373,10 +413,13 @@ body {
         );
 }
 
+
+/* درِ پاکت */
+
 .envelope-flap {
     position: absolute;
 
-    z-index: 6;
+    z-index: 7;
 
     top: 0;
     left: 0;
@@ -404,42 +447,14 @@ body {
         transform 1s cubic-bezier(.2,.8,.2,1);
 }
 
-.letter {
-    position: absolute;
 
-    z-index: 5;
-
-    left: 8%;
-    bottom: 8%;
-
-    width: 84%;
-    height: 90%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fffdf8,
-            #fff6f9
-        );
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 12px 30px rgba(100,40,70,.18);
-
-    overflow: hidden;
-
-    transform:
-        translateY(25%);
-
-    transition:
-        transform 1.2s cubic-bezier(.2,.8,.2,1),
-        box-shadow .8s ease;
-}
+/* محتوای نامه */
 
 .letter-content {
     padding: 25px 22px;
+
     text-align: center;
+
     color: #765264;
 
     opacity: 0;
@@ -450,20 +465,30 @@ body {
 
 .letter-content h3 {
     color: #853d5d;
+
     font-size: 26px;
+
     margin-bottom: 12px;
 }
 
 .letter-content p {
     font-size: 16px;
+
     line-height: 1.9;
+
     margin-bottom: 8px;
 }
 
 .letter-heart {
     font-size: 28px;
+
     margin-top: 5px;
 }
+
+
+/* =========================
+   حالت باز
+========================= */
 
 .envelope.open .envelope-flap {
     transform: rotateX(180deg);
@@ -471,8 +496,6 @@ body {
 
 .envelope.open .letter {
     transform: translateY(-65%);
-    box-shadow:
-        0 20px 45px rgba(100,40,70,.22);
 }
 
 .envelope.open .letter-content {
