@@ -7,6 +7,12 @@ const passwordInput = document.getElementById("passwordInput");
 const enterButton = document.getElementById("enterButton");
 const errorMessage = document.getElementById("errorMessage");
 
+const envelope = document.getElementById("envelope");
+
+
+/* =========================
+   باز کردن صفحه هدیه
+========================= */
 
 function openGift() {
 
@@ -18,14 +24,23 @@ function openGift() {
     passwordBox.classList.add("hide");
 
     setTimeout(() => {
+
         giftBox.classList.add("show");
+
+        document.body.style.overflowX = "hidden";
+
     }, 650);
 }
 
 
+/* =========================
+   بررسی رمز
+========================= */
+
 function checkPassword() {
 
-    const enteredPassword = passwordInput.value.trim();
+    const enteredPassword =
+        passwordInput.value.trim();
 
     if (enteredPassword === correctPassword) {
 
@@ -34,7 +49,7 @@ function checkPassword() {
     } else {
 
         errorMessage.textContent =
-            "الرمزغلط جربی بعد مرههه ❤️";
+            "الرمز غلط، جربي بعد مرههه ❤️";
 
         passwordInput.value = "";
 
@@ -49,13 +64,68 @@ function checkPassword() {
 }
 
 
-enterButton.addEventListener("click", checkPassword);
+/* =========================
+   دکمه ورود
+========================= */
+
+enterButton.addEventListener(
+    "click",
+    checkPassword
+);
 
 
-passwordInput.addEventListener("keydown", function(event) {
+/* =========================
+   Enter روی کیبورد
+========================= */
 
-    if (event.key === "Enter") {
-        checkPassword();
+passwordInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            checkPassword();
+
+        }
+
     }
+);
 
-});
+
+/* =========================
+   باز کردن پاکت
+========================= */
+
+if (envelope) {
+
+    envelope.addEventListener(
+        "click",
+        function() {
+
+            envelope.classList.toggle("open");
+
+        }
+    );
+
+
+    /* باز شدن با Enter یا Space */
+
+    envelope.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                envelope.classList.toggle("open");
+
+            }
+
+        }
+    );
+
+}
