@@ -305,41 +305,53 @@ body {
    پاکت نامه
 ========================= */
 
+.envelope-section {
+    padding: 40px 0 100px;
+    text-align: center;
+}
+
 .envelope {
     position: relative;
 
     width: min(86vw, 440px);
-    aspect-ratio: 1.45;
+    height: 300px;
 
-    margin: 40px auto 0;
+    margin: 70px auto 0;
 
     cursor: pointer;
+
     perspective: 1000px;
+
+    overflow: visible;
 
     filter:
         drop-shadow(
             0 25px 35px rgba(115,48,77,.22)
         );
 
-    transition: transform .4s ease;
-
-    overflow: visible;
+    transition:
+        transform .4s ease;
 }
 
 .envelope:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform:
+        translateY(-8px)
+        scale(1.02);
 }
 
 
-/* پشت پاکت */
+/* =========================
+   پشت پاکت
+========================= */
 
 .envelope-back {
     position: absolute;
+
     inset: 0;
 
     z-index: 1;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
     background:
         linear-gradient(
@@ -348,22 +360,27 @@ body {
             #e89bb8
         );
 
-    border: 1px solid rgba(150,70,100,.15);
+    border:
+        1px solid rgba(150,70,100,.15);
 }
 
 
-/* نامه */
+/* =========================
+   نامه
+========================= */
 
 .letter {
     position: absolute;
 
-    left: 8%;
+    left: 7%;
     bottom: 5%;
 
-    width: 84%;
-    height: 92%;
+    width: 86%;
+    height: 270px;
 
-    z-index: 3;
+    z-index: 2;
+
+    padding: 0;
 
     background:
         linear-gradient(
@@ -372,29 +389,81 @@ body {
             #fff6f9
         );
 
-    border-radius: 8px;
+    border-radius: 10px;
 
     box-shadow:
-        0 10px 25px rgba(100,40,70,.15);
+        0 12px 30px rgba(100,40,70,.18);
 
     overflow: hidden;
 
-    transform: translateY(15%);
+    transform:
+        translateY(30%);
 
     transition:
         transform 1.2s cubic-bezier(.2,.8,.2,1);
+
+    /* خیلی مهم */
+    visibility: visible;
 }
 
 
-/* جلوی پاکت */
+/* =========================
+   متن نامه
+========================= */
+
+.letter-content {
+    width: 100%;
+    height: 100%;
+
+    padding: 25px 22px;
+
+    text-align: center;
+
+    color: #765264;
+
+    opacity: 0;
+
+    transition:
+        opacity .7s ease .45s;
+
+    overflow-y: auto;
+}
+
+.letter-content h3 {
+    color: #853d5d;
+
+    font-size: 26px;
+
+    margin-bottom: 12px;
+}
+
+.letter-content p {
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin-bottom: 10px;
+}
+
+.letter-heart {
+    font-size: 28px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   جلوی پاکت
+========================= */
 
 .envelope-front {
     position: absolute;
+
     inset: 0;
 
     z-index: 5;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
     background:
         linear-gradient(
@@ -411,21 +480,25 @@ body {
             100% 100%,
             0 100%
         );
+
+    pointer-events: none;
 }
 
 
-/* درِ پاکت */
+/* =========================
+   در پاکت
+========================= */
 
 .envelope-flap {
     position: absolute;
-
-    z-index: 7;
 
     top: 0;
     left: 0;
 
     width: 100%;
-    height: 65%;
+    height: 68%;
+
+    z-index: 7;
 
     background:
         linear-gradient(
@@ -445,59 +518,32 @@ body {
 
     transition:
         transform 1s cubic-bezier(.2,.8,.2,1);
-}
 
-
-/* محتوای نامه */
-
-.letter-content {
-    padding: 25px 22px;
-
-    text-align: center;
-
-    color: #765264;
-
-    opacity: 0;
-
-    transition:
-        opacity .7s ease .5s;
-}
-
-.letter-content h3 {
-    color: #853d5d;
-
-    font-size: 26px;
-
-    margin-bottom: 12px;
-}
-
-.letter-content p {
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    margin-bottom: 8px;
-}
-
-.letter-heart {
-    font-size: 28px;
-
-    margin-top: 5px;
+    pointer-events: none;
 }
 
 
 /* =========================
-   حالت باز
+   وقتی پاکت باز می‌شود
 ========================= */
 
 .envelope.open .envelope-flap {
-    transform: rotateX(180deg);
+    transform:
+        rotateX(180deg);
 }
 
+
+/* نامه بیرون می‌آید */
+
 .envelope.open .letter {
-    z-index: 8;
-    transform: translateY(-65%);
+    z-index: 10;
+
+    transform:
+        translateY(-75%);
 }
+
+
+/* متن نامه ظاهر می‌شود */
 
 .envelope.open .letter-content {
     opacity: 1;
@@ -959,22 +1005,31 @@ audio {
         font-size: 17px;
     }
 
-    .envelope {
-        width: 92vw;
-    }
+  .envelope {
+    width: 92vw;
+    height: 260px;
+}
 
-   .letter-content {
-    padding: 20px 16px;
-    }
+.letter {
+    height: 235px;
+}
+
+.letter-content {
+    padding: 18px 15px;
+}
 
 .letter-content h3 {
-    font-size: 22px;
-    }
+    font-size: 21px;
+}
 
 .letter-content p {
-    font-size: 14px;
-    line-height: 1.7;
-    } 
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.envelope.open .letter {
+    transform: translateY(-72%);
+}
 
     .photo-message {
         padding: 20px 18px;
