@@ -12,8 +12,8 @@
 
 <body>
 
+    <!-- حباب‌های پس‌زمینه -->
     <div class="bubbles">
-
         <span class="bubble"></span>
         <span class="bubble"></span>
         <span class="bubble"></span>
@@ -26,13 +26,14 @@
         <span class="bubble"></span>
         <span class="bubble"></span>
         <span class="bubble"></span>
-
     </div>
 
 
     <main class="page">
 
-        <!-- صفحه رمز -->
+        <!-- =========================
+             صفحه رمز
+        ========================== -->
 
         <section class="password-box" id="passwordBox">
 
@@ -63,27 +64,336 @@
         </section>
 
 
-        <!-- صفحه هدیه -->
+        <!-- =========================
+             صفحه هدیه
+        ========================== -->
 
         <section class="gift-box" id="giftBox">
 
-            <div class="gift-content">
+            <div class="gift-page">
 
-                <div class="heart">
-                    ♥️
-                </div>
 
-                <h2>
-                    بنين حبيبتي
-                </h2>
+                <!-- =========================
+                     بخش اول - پاکت نامه
+                ========================== -->
 
-                <p>
-                    های الهدیهههه❤️
-                </p>
+                <section class="letter-section">
 
-                <p>
-                    اتمنه هل هدیه یجیب الابتسامه فی شفایفچ...
-                </p>
+                    <p class="small-title">
+                        عندي شي خاص إلچ ❤️
+                    </p>
+
+                    <h2>
+                        رسالة من قلبي
+                    </h2>
+
+
+                    <div
+                        class="envelope"
+                        id="envelope"
+                        onclick="openLetter()"
+                    >
+
+                        <div class="envelope-back"></div>
+
+                        <div class="envelope-letter">
+
+                            <div class="letter-paper">
+
+                                <h3>
+                                    بنين حبيبتي ❤️
+                                </h3>
+
+                                <p>
+                                    عيونچ مب بس عيون… فيها شي يخلّيني أضيع وأنا أطالعها.
+                                    كل مرّة أشوفچ أحس إن الجمال له معنى ثاني يوم يكون فيچ.
+                                    ضحكتچ، نظرتچ، وكل تفاصيلچ لها مكان خاص بقلبي.
+                                    يمكن الكلام ما يوصفچ مثل ما تستاهلين،
+                                    بس اللي أعرفه إنچ من أجمل الأشياء اللي صارت في حياتي. ❤️
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="envelope-front"></div>
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-heart">
+                            ❤️
+                        </div>
+
+                    </div>
+
+
+                    <p class="click-hint" id="clickHint">
+                        اضغطي على الظرف ❤️
+                    </p>
+
+                </section>
+
+
+
+                <!-- =========================
+                     بخش عکس‌ها
+                ========================== -->
+
+                <section class="photos-section">
+
+                    <div class="section-heading">
+
+                        <span>✦</span>
+
+                        <h2>
+                            أجمل ثلاث صور
+                        </h2>
+
+                        <span>✦</span>
+
+                    </div>
+
+
+                    <!-- عکس اول -->
+
+                    <article class="photo-card">
+
+                        <div class="photo-frame">
+
+                            <img
+                                src="photo1.jpg"
+                                alt="صورة بنين الأولى"
+                            >
+
+                        </div>
+
+                        <p class="photo-message">
+                             هل صوره اول ما شفته قلب نبض و حبیته مرهههه ❤️
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- عکس دوم -->
+
+                    <article class="photo-card">
+
+                        <div class="photo-frame">
+
+                            <img
+                                src="photo2.jpg"
+                                alt="صورة بنين الثانية"
+                            >
+
+                        </div>
+
+                        <p class="photo-message">
+                            كل نظرة منچ لها حكاية، وأنا أحب كل حكاياتچ ❤️
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- عکس سوم -->
+
+                    <article class="photo-card">
+
+                        <div class="photo-frame">
+
+                            <img
+                                src="photo3.jpg"
+                                alt="صورة بنين الثالثة"
+                            >
+
+                        </div>
+
+                        <p class="photo-message">
+                            الجمال فيچ مو بس بالشكل، الجمال بكل تفاصيلچ ❤️
+                        </p>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =========================
+                     نامه دوم
+                ========================== -->
+
+                <section class="second-letter-section">
+
+                    <div class="second-letter">
+
+                        <div class="letter-icon">
+                            💌
+                        </div>
+
+                        <h2>
+                            كلمة صغيرة من قلبي
+                        </h2>
+
+                        <p>
+                            يمكن الصور تحفظ لحظات،
+                            بس وجودچ هو الشي اللي يخلي كل لحظة لها معنى.
+                            وكل مرة أشوفچ، أحمد ربي على وجودچ بحياتي.
+                            ❤️
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     بخش موزیک
+                ========================== -->
+
+                <section class="music-section">
+
+                    <div class="music-card">
+
+                        <div class="music-icon">
+                            🎵
+                        </div>
+
+                        <h2>
+                            أغاني أحب أسمعها وياچ
+                        </h2>
+
+                        <p class="music-subtitle">
+                            أغنيتين إلهم مكان خاص ❤️
+                        </p>
+
+
+                        <!-- آهنگ اول -->
+
+                        <div class="music-item">
+
+                            <div class="music-info">
+
+                                <span class="music-number">
+                                    01
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        الأغنية الأولى
+                                    </h3>
+
+                                    <p>
+                                        أغنية بنين المفضلة 🎶
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <audio controls>
+                                <source
+                                    src="song1.mp3"
+                                    type="audio/mpeg"
+                                >
+                            </audio>
+
+                        </div>
+
+
+                        <!-- آهنگ دوم -->
+
+                        <div class="music-item">
+
+                            <div class="music-info">
+
+                                <span class="music-number">
+                                    02
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        الأغنية الثانية
+                                    </h3>
+
+                                    <p>
+                                        أغنية ثانية إلها ذكرى ❤️
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <audio controls>
+                                <source
+                                    src="song2.mp3"
+                                    type="audio/mpeg"
+                                >
+                            </audio>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     نامه پایانی
+                ========================== -->
+
+                <section class="final-letter-section">
+
+                    <div class="final-letter">
+
+                        <div class="final-decoration">
+                            ✦ ❤️ ✦
+                        </div>
+
+                        <h2>
+                            بنين...
+                        </h2>
+
+                        <p>
+                            يمكن هالكلمات بسيطة،
+                            بس كل كلمة فيها من قلبي.
+                            وجودچ بحياتي له معنى كبير،
+                            وأتمنى دوم أشوف الابتسامة على ويهچ.
+                            مهما كتبت، ما بقدر أوصف مكانتچ عندي.
+                            الله يخليچ لي،
+                            وتبقى أيامج كلها فرح وسعادة.
+                            أحبچ ❤️
+                        </p>
+
+                        <div class="final-heart">
+                            ❤️
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     پایان سایت
+                ========================== -->
+
+                <footer class="birthday-footer">
+
+                    <div class="footer-line"></div>
+
+                    <p>
+                        عید میلاد سعید عیونی ❤️
+                    </p>
+
+                    <span>
+                        ✨
+                    </span>
+
+                </footer>
+
 
             </div>
 
