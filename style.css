@@ -468,14 +468,13 @@ background: rgba(255,255,255,.75);
 
 
 /* =========================
-   پاکت
+   خود پاکت
 ========================= */
 
 .envelope {
     position: relative;
 
     width: min(86vw, 440px);
-
     height: 300px;
 
     margin: 70px auto 0;
@@ -503,9 +502,7 @@ background: rgba(255,255,255,.75);
 
 .envelope:focus {
     outline: 3px solid rgba(157,79,112,.35);
-
     outline-offset: 8px;
-
     border-radius: 15px;
 }
 
@@ -542,8 +539,8 @@ background: rgba(255,255,255,.75);
 .envelope-letter {
     position: absolute;
 
-left: 7%;
-    bottom: 5%;
+    left: 7%;
+    bottom: 0;
 
     width: 86%;
     height: 270px;
@@ -566,8 +563,7 @@ left: 7%;
 
     overflow: hidden;
 
-    transform:
-        translateY(30%);
+    transform: translateY(30%);
 
     transition:
         transform 1.2s cubic-bezier(.2,.8,.2,1);
@@ -691,7 +687,8 @@ left: 7%;
     left: 50%;
     top: 48%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     z-index: 8;
 
@@ -709,18 +706,19 @@ left: 7%;
 
 
 /* =========================
-   پاکت باز
+   وقتی پاکت باز می‌شود
 ========================= */
 
 .envelope.open .envelope-flap {
-    transform: rotateX(180deg);
+    transform:
+        rotateX(180deg);
 }
 
 .envelope.open .envelope-letter {
-    z-index: 10;
+    z-index: 6;
 
     transform:
-        translateY(-75%);
+        translateY(-70%);
 }
 
 .envelope.open .envelope-heart {
@@ -730,6 +728,11 @@ left: 7%;
         translate(-50%, -50%)
         scale(.7);
 }
+
+
+/* =========================
+   راهنمای کلیک
+========================= */
 
 .click-hint {
     color: #8d6577;
@@ -755,6 +758,42 @@ left: 7%;
     }
 }
 
+
+/* =========================
+   تنظیم پاکت در موبایل
+========================= */
+
+@media (max-width: 600px) {
+
+    .envelope {
+        width: 92vw;
+        height: 260px;
+
+        margin-top: 50px;
+    }
+
+    .envelope-letter {
+        height: 235px;
+    }
+
+    .letter-paper {
+        padding: 18px 15px;
+    }
+
+    .letter-paper h3 {
+        font-size: 21px;
+    }
+
+    .letter-paper p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .envelope.open .envelope-letter {
+        transform:
+            translateY(-68%);
+    }
+}
 
 /* =========================
    عنوان بخش عکس‌ها
