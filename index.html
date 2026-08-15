@@ -74,7 +74,7 @@
 
 
                 <!-- =========================
-                     بخش اول - پاکت نامه
+                     پاکت نامه
                 ========================== -->
 
                 <section class="letter-section">
@@ -91,10 +91,13 @@
                     <div
                         class="envelope"
                         id="envelope"
-                        onclick="openLetter()"
+                        tabindex="0"
+                        role="button"
+                        aria-label="فتح الرسالة"
                     >
 
                         <div class="envelope-back"></div>
+
 
                         <div class="envelope-letter">
 
@@ -135,9 +138,8 @@
                 </section>
 
 
-
                 <!-- =========================
-                     بخش عکس‌ها
+                     عکس‌ها
                 ========================== -->
 
                 <section class="photos-section">
@@ -156,7 +158,6 @@
 
 
                     <!-- عکس اول -->
-
                     <article class="photo-card">
 
                         <div class="photo-frame">
@@ -169,11 +170,10 @@
                         </div>
 
                         <p class="photo-message">
-                             هل صوره اول ما شفته قلب نبض و حبیته مرهههه ❤️
+                            هل صوره اول ما شفته قلب نبض و حبیته مرهههه ❤️
                         </p>
 
                     </article>
-
 
 
                     <!-- عکس دوم -->
@@ -196,7 +196,6 @@
                     </article>
 
 
-
                     <!-- عکس سوم -->
 
                     <article class="photo-card">
@@ -217,7 +216,6 @@
                     </article>
 
                 </section>
-
 
 
                 <!-- =========================
@@ -248,9 +246,8 @@
                 </section>
 
 
-
                 <!-- =========================
-                     بخش موزیک
+                     موزیک
                 ========================== -->
 
                 <section class="music-section">
@@ -281,6 +278,7 @@
                                 </span>
 
                                 <div>
+
                                     <h3>
                                         الأغنية الأولى
                                     </h3>
@@ -288,15 +286,20 @@
                                     <p>
                                         أغنية بنين المفضلة 🎶
                                     </p>
+
                                 </div>
 
                             </div>
 
-                            <audio controls>
+                            <audio controls preload="metadata">
+
                                 <source
                                     src="song1.mp3"
                                     type="audio/mpeg"
                                 >
+
+                                متصفحك لا يدعم تشغيل الصوت.
+
                             </audio>
 
                         </div>
@@ -305,7 +308,6 @@
                         <!-- آهنگ دوم -->
 
                         <div class="music-item">
-
                             <div class="music-info">
 
                                 <span class="music-number">
@@ -313,6 +315,7 @@
                                 </span>
 
                                 <div>
+
                                     <h3>
                                         الأغنية الثانية
                                     </h3>
@@ -320,15 +323,20 @@
                                     <p>
                                         أغنية ثانية إلها ذكرى ❤️
                                     </p>
+
                                 </div>
 
                             </div>
 
-                            <audio controls>
+                            <audio controls preload="metadata">
+
                                 <source
                                     src="song2.mp3"
                                     type="audio/mpeg"
                                 >
+
+                                متصفحك لا يدعم تشغيل الصوت.
+
                             </audio>
 
                         </div>
@@ -336,7 +344,6 @@
                     </div>
 
                 </section>
-
 
 
                 <!-- =========================
@@ -375,7 +382,6 @@
                 </section>
 
 
-
                 <!-- =========================
                      پایان سایت
                 ========================== -->
@@ -393,7 +399,6 @@
                     </span>
 
                 </footer>
-
 
             </div>
 
