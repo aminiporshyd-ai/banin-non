@@ -8,6 +8,7 @@ const enterButton = document.getElementById("enterButton");
 const errorMessage = document.getElementById("errorMessage");
 
 const envelope = document.getElementById("envelope");
+const clickHint = document.getElementById("clickHint");
 
 
 /* =========================
@@ -28,6 +29,11 @@ function openGift() {
         giftBox.classList.add("show");
 
         document.body.style.overflowX = "hidden";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }, 650);
 }
@@ -84,16 +90,16 @@ passwordInput.addEventListener(
 
         if (event.key === "Enter") {
 
+            event.preventDefault();
+
             checkPassword();
-
         }
-
     }
 );
 
 
 /* =========================
-   باز کردن پاکت
+   باز کردن پاکت نامه
 ========================= */
 
 if (envelope) {
@@ -104,11 +110,27 @@ if (envelope) {
 
             envelope.classList.toggle("open");
 
+            if (clickHint) {
+
+                if (envelope.classList.contains("open")) {
+
+                    clickHint.textContent =
+                        "رسالتچ ❤️";
+
+                } else {
+
+                    clickHint.textContent =
+                        "اضغطي على الظرف ❤️";
+                }
+            }
+
         }
     );
 
 
-    /* باز شدن با Enter یا Space */
+    /* =========================
+       باز کردن با Enter یا Space
+    ========================== */
 
     envelope.addEventListener(
         "keydown",
@@ -123,6 +145,19 @@ if (envelope) {
 
                 envelope.classList.toggle("open");
 
+                if (clickHint) {
+
+                    if (envelope.classList.contains("open")) {
+
+                        clickHint.textContent =
+                            "رسالتچ ❤️";
+
+                    } else {
+
+                        clickHint.textContent =
+                            "اضغطي على الظرف ❤️";
+                    }
+                }
             }
 
         }
